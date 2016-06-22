@@ -1,0 +1,49 @@
+<resources>
+
+    <string name="mdg__library_name">Material Design Library</string>
+
+<!-- Menu -->
+<eat-comment />
+
+    <string name="mdg__menu_item_more">More</string>
+
+<!-- Drawer -->
+<eat-comment />
+
+    <string name="mdg__drawer_open">Open navigation drawer</string>
+    <string name="mdg__drawer_close">Close navigation drawer</string>
+
+<!-- Buttons -->
+<eat-comment />
+
+    <string name="mdg__button_yes">Yes</string>
+    <string name="mdg__button_no">No</string>
+
+    <string name="mdg__button_back">Back</string>
+    <string name="mdg__button_done">Done</string>
+    <string name="mdg__button_save">Save</string>
+
+    <string name="mdg__button_ok">OK</string>
+    <string name="mdg__button_cancel">Cancel</string>
+    <string name="mdg__button_cancel_short">Cancel</string>
+    <string name="mdg__button_accept">Accept</string>
+    <string name="mdg__button_close">Close</string>
+    <string name="mdg__button_exit">Exit</string>
+    <string name="mdg__button_add">Add</string>
+
+    <string name="mdg__button_continue">Continue</string>
+    <string name="mdg__button_edit">Edit</string>
+    <string name="mdg__button_confirm">Confirm</string>
+
+    <string name="mdg__button_further">Further</string>
+
+<!-- Alerts -->
+<eat-comment />
+
+    <string name="mdg__title_alert_error">Error</string>
+    <string name="mdg__title_alert_information">Information</string>
+    <string name="mdg__title_alert_exit">Exit</string>
+
+    <string name="mdg__label_alert_request_in_progress">Loading…</string>
+
+</resources>

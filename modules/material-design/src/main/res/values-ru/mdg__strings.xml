@@ -1,0 +1,49 @@
+<resources>
+
+    <string name="mdg__library_name">Material Design Library</string>
+
+<!-- Menu -->
+<eat-comment />
+
+    <string name="mdg__menu_item_more">Ещё</string>
+
+<!-- Drawer -->
+<eat-comment />
+
+    <string name="mdg__drawer_open">Открыть панель навигации</string>
+    <string name="mdg__drawer_close">Закрыть панель навигации</string>
+
+<!-- Buttons -->
+<eat-comment />
+
+    <string name="mdg__button_yes">Да</string>
+    <string name="mdg__button_no">Нет</string>
+
+    <string name="mdg__button_back">Назад</string>
+    <string name="mdg__button_done">Готово</string>
+    <string name="mdg__button_save">Сохранить</string>
+
+    <string name="mdg__button_ok">Далее</string>
+    <string name="mdg__button_cancel">Отменить</string>
+    <string name="mdg__button_cancel_short">Отмена</string>
+    <string name="mdg__button_accept">Принять</string>
+    <string name="mdg__button_close">Закрыть</string>
+    <string name="mdg__button_exit">Выйти</string>
+    <string name="mdg__button_add">Добавить</string>
+
+    <string name="mdg__button_continue">Продолжить</string>
+    <string name="mdg__button_edit">Редактировать</string>
+    <string name="mdg__button_confirm">Подтвердить</string>
+
+    <string name="mdg__button_further">Далее</string>
+
+<!-- Alerts -->
+<eat-comment />
+
+    <string name="mdg__title_alert_error">Ошибка</string>
+    <string name="mdg__title_alert_information">Информация</string>
+    <string name="mdg__title_alert_exit">Выход</string>
+
+    <string name="mdg__label_alert_request_in_progress">Загрузка…</string>
+
+</resources>

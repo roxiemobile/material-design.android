@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Size -->
+    <dimen name="mdg__size_extra_huge">28dp</dimen>
+    <dimen name="mdg__size_huge">24dp</dimen>
+    <dimen name="mdg__size_extra_large">20dp</dimen>
+    <dimen name="mdg__size_large">16dp</dimen>
+    <dimen name="mdg__size_medium">12dp</dimen>
+    <dimen name="mdg__size_small">8dp</dimen>
+    <dimen name="mdg__size_extra_small">4dp</dimen>
+    <dimen name="mdg__size_micro">2dp</dimen>
+
+</resources>

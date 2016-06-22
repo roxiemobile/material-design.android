@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Android: AppCompat 21 how to add shadow on ActionBar -->
+    <!-- @link http://stackoverflow.com/a/26759202 -->
+
+    <style name="MDG_AppBaseTheme" />
+
+    <style name="MDG_AppBaseTheme.ActionBar" />
+
+    <style name="MDG_AppBaseTheme.ActionBar.ContentOverlay">
+        <item name="android:foreground">?android:windowContentOverlay</item>
+        <item name="android:foregroundGravity">fill_horizontal|top</item>
+    </style>
+
+</resources>
