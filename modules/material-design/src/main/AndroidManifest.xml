@@ -4,8 +4,19 @@
     >
 
     <application>
-        <activity android:name=".ui.activity.RootDrawerFragmentActivity_" />
-        <activity android:name=".ui.activity.RootFragmentActivity_" />
+
+        <activity
+            android:name=".ui.activity.RootDrawerFragmentActivity_"
+            android:screenOrientation="behind"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+
+        <activity
+            android:name=".ui.activity.RootFragmentActivity_"
+            android:screenOrientation="behind"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+
     </application>
 
 </manifest>
