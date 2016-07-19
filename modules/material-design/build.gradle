@@ -3,9 +3,6 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
-def AAVersion = '4.0.0'
-def ASVersion = '24.0.0'
-
 apt {
     arguments {
         //noinspection GroovyAssignabilityCheck
@@ -14,12 +11,16 @@ apt {
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    //noinspection GroovyAssignabilityCheck
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    //noinspection GroovyAssignabilityCheck
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 24
+        //noinspection GroovyAssignabilityCheck
+        minSdkVersion rootProject.ext.minSdkVersion
+        //noinspection GroovyAssignabilityCheck
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
         versionName '0.2.1'
     }
@@ -38,14 +39,19 @@ android {
 }
 
 dependencies {
-    apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
 
-    compile "com.android.support:design:$ASVersion"
+    // Android Annotations
+    final ANDROID_ANNOTATIONS_VERSION = rootProject.ext.ANDROID_ANNOTATIONS_VERSION
+    apt "org.androidannotations:androidannotations:$ANDROID_ANNOTATIONS_VERSION"
+    compile "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
+
+    // Android Support
+    final ANDROID_SUPPORT_VERSION = rootProject.ext.ANDROID_SUPPORT_VERSION
+    compile "com.android.support:design:$ANDROID_SUPPORT_VERSION"
 
     // External dependencies
     compile 'com.google.code.gson:gson:2.7'
-    compile 'com.roxiemobile.android:android-commons:0.2.0'
+    compile 'com.roxiemobile.android:android-commons:0.2.1'
 
     // Test dependencies
     testCompile 'junit:junit:4.12'
