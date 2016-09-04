@@ -1,1 +1,1 @@
-include ':examples', ':material-design'
+include ':material-design', ':examples'

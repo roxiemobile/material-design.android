@@ -51,7 +51,7 @@ dependencies {
 
     // External dependencies
     compile 'com.google.code.gson:gson:2.7'
-    compile 'com.roxiemobile.android:android-commons:0.2.1'
+    compile 'com.roxiemobile.android:android-commons:0.2.2'
 
     // Test dependencies
     testCompile 'junit:junit:4.12'
