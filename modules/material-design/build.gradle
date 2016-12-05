@@ -50,8 +50,8 @@ dependencies {
     compile "com.android.support:design:$ANDROID_SUPPORT_VERSION"
 
     // External dependencies
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.roxiemobile.android:android-commons:0.2.2'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.roxiemobile.android:android-commons:0.2.3'
 
     // Test dependencies
     testCompile 'junit:junit:4.12'
