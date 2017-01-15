@@ -25,7 +25,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @EActivity
 public abstract class BaseFragmentActivity extends AppCompatActivity
@@ -137,7 +137,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
 
             // Get Fragment's class name
             String fname  = BundleUtils.get(bundle, IntentBuilder.EXTRA_CLASS_NAME);
-            if (!StringUtils.isEmpty(fname)) {
+            if (!StringUtils.isNullOrEmpty(fname)) {
 
                 // Instantiate fragment
                 Fragment fragment = Fragment.instantiate(this, fname, bundle.getBundle(IntentBuilder.EXTRA_ARGUMENTS));
@@ -152,7 +152,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
 
     // FIXME: protected
     public final void replaceContentLayout(@NonNull Fragment fragment) {
-        assertNotNull(fragment, "fragment == null");
+        requireNotNull(fragment, "fragment is null");
 
         // Replace fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.mdg__layout_content, fragment).commit();
@@ -171,7 +171,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
     }
 
     protected void saveInstanceState(@NonNull Bundle state) {
-        assertNotNull(state, "state == null");
+        requireNotNull(state, "state is null");
 
         // Save instance state
         state.putInt(PrefKeys.CONTENT_FRAGMENT_ID, mContentFragmentId);

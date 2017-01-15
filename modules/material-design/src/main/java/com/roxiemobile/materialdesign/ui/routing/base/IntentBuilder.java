@@ -12,7 +12,7 @@ import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
 import com.roxiemobile.materialdesign.data.Resources.ResId;
 import com.roxiemobile.materialdesign.util.ClassUtils;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @SuppressWarnings({"unchecked", "unused"})
 public abstract class IntentBuilder<BuilderType extends IntentBuilder>
@@ -62,22 +62,22 @@ public abstract class IntentBuilder<BuilderType extends IntentBuilder>
 // --
 
     public @NonNull Intent build(@NonNull Context context) {
-        assertNotNull(context, "context == null");
-        assertNotNull(mActivityClass, "activityClass == null");
-        assertNotNull(mFragmentClass, "fragmentClass == null");
+        requireNotNull(context, "context is null");
+        requireNotNull(mActivityClass, "activityClass is null");
+        requireNotNull(mFragmentClass, "fragmentClass is null");
         return newIntent(context);
     }
 
 // MARK: - Private Methods
 
     private @NonNull Intent newIntent(@NonNull Context context) {
-        assertNotNull(context, "context == null");
+        requireNotNull(context, "context is null");
 
         Class<?> activityClass = ClassUtils.getGeneratedClass(mActivityClass);
-        assertNotNull(activityClass, "Class generated from " + mActivityClass.getCanonicalName() + " was not found.");
+        requireNotNull(activityClass, "Class generated from " + mActivityClass.getCanonicalName() + " was not found.");
 
         Class<?> fragmentClass = ClassUtils.getGeneratedClass(mFragmentClass);
-        assertNotNull(fragmentClass, "Class generated from " + mFragmentClass.getCanonicalName() + " was not found.");
+        requireNotNull(fragmentClass, "Class generated from " + mFragmentClass.getCanonicalName() + " was not found.");
 
         // Build Intent
         Intent intent = new Intent(context, activityClass);

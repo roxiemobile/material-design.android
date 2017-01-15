@@ -4,7 +4,7 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextUtils;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
 
 import java.util.ArrayList;
 
@@ -221,7 +221,7 @@ public class TextMask
                         inSquareBrackets = true;
                     }
                     else {
-                        LogUtils.w(TAG, "ALARM! “[[” in mask");
+                        Logger.w(TAG, "ALARM! “[[” in mask");
                     }
                     break;
                 }
@@ -230,7 +230,7 @@ public class TextMask
                         inSquareBrackets = false;
                     }
                     else {
-                        LogUtils.w(TAG, "ALARM! “]]” in mask");
+                        Logger.w(TAG, "ALARM! “]]” in mask");
                     }
                     break;
                 }
@@ -239,7 +239,7 @@ public class TextMask
                         inCurlyBrackets = true;
                     }
                     else {
-                        LogUtils.w(TAG, "ALARM! “{{” in mask");
+                        Logger.w(TAG, "ALARM! “{{” in mask");
                     }
                     break;
                 }
@@ -248,7 +248,7 @@ public class TextMask
                         inCurlyBrackets = false;
                     }
                     else {
-                        LogUtils.w(TAG, "ALARM! “}}” in mask");
+                        Logger.w(TAG, "ALARM! “}}” in mask");
                     }
                     break;
                 }

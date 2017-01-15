@@ -2,7 +2,7 @@ package com.roxiemobile.materialdesign.util;
 
 import android.os.Bundle;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
 
 public final class BundleUtils
 {
@@ -67,7 +67,7 @@ public final class BundleUtils
                 object = (T) bundle.get(key);
             }
             catch (ClassCastException ex) {
-                LogUtils.w(TAG, ex);
+                Logger.w(TAG, ex);
             }
         }
 

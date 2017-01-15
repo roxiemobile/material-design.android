@@ -21,7 +21,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
 import com.roxiemobile.materialdesign.R;
 
 import java.util.regex.Pattern;
@@ -131,7 +131,7 @@ public class MaskedEditText extends EditText
             }
         }
         catch (PatternSyntaxException e) {
-            LogUtils.w(TAG, e);
+            Logger.w(TAG, e);
         }
 
         // Store new pattern

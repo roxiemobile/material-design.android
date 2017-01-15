@@ -18,7 +18,7 @@ import com.roxiemobile.materialdesign.util.FragmentUtils;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @EFragment
 public abstract class BaseFragment extends Fragment
@@ -113,7 +113,7 @@ public abstract class BaseFragment extends Fragment
     }
 
     protected void saveInstanceState(@NonNull Bundle state) {
-        assertNotNull(state, "state == null");
+        requireNotNull(state, "state is null");
 
         // Save instance state
         state.putString(PrefKeys.UNIQUE_TAG, mUniqueTag);

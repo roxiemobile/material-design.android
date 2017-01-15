@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Log;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
+import com.roxiemobile.androidcommons.logging.Logger.LogLevel;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertTrue;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireTrue;
 
 public final class FragmentUtils
 {
@@ -32,8 +32,8 @@ public final class FragmentUtils
      * @return Returns a new fragment instance.
      */
     public static Fragment instantiate(@NonNull Class<?> clazz, Bundle args) {
-        assertNotNull(clazz, "clazz == null");
-        assertTrue(Fragment.class.isAssignableFrom(clazz), "clazz is not assignable from Fragment");
+        requireNotNull(clazz, "clazz is null");
+        requireTrue(Fragment.class.isAssignableFrom(clazz), "clazz is not assignable from Fragment");
 
         Fragment fragment = null;
         try {
@@ -45,10 +45,10 @@ public final class FragmentUtils
             }
         }
         catch (Exception ex) {
-            LogUtils.e(TAG, ex);
+            Logger.e(TAG, ex);
 
             // Terminate application with runtime exception
-            if (LogUtils.isLoggable(Log.DEBUG)) {
+            if (Logger.isLoggable(LogLevel.Debug)) {
                 throw new Fragment.InstantiationException("Unable to instantiate fragment "
                         + clazz.getCanonicalName() + ": make sure class name exists, is public, "
                         + "and has an empty constructor that is public", ex);
@@ -67,7 +67,7 @@ public final class FragmentUtils
      * TODO
      */
     public static Bundle getArguments(@NonNull Fragment fragment, Bundle defaultValue) {
-        assertNotNull(fragment, "fragment == null");
+        requireNotNull(fragment, "fragment is null");
 
         Bundle extras = fragment.getArguments();
         return (extras != null) ? extras : defaultValue;
@@ -78,8 +78,8 @@ public final class FragmentUtils
      * containing Activity.
      */
     public static boolean startActivity(@NonNull Fragment fragment, @NonNull Intent intent) {
-        assertNotNull(fragment, "fragment == null");
-        assertNotNull(intent, "intent == null");
+        requireNotNull(fragment, "fragment is null");
+        requireNotNull(intent, "intent is null");
 
         boolean result = false;
         try {
@@ -88,10 +88,10 @@ public final class FragmentUtils
             result = true;
         }
         catch (Exception ex) {
-            LogUtils.e(TAG, ex);
+            Logger.e(TAG, ex);
 
             // Terminate application with runtime exception
-            if (LogUtils.isLoggable(Log.DEBUG)) {
+            if (Logger.isLoggable(LogLevel.Debug)) {
                 throw new RuntimeException(ex);
             }
         }
@@ -104,8 +104,8 @@ public final class FragmentUtils
      * TODO
      */
     public static boolean startActivityForResult(@NonNull Fragment fragment, @NonNull Intent intent, int requestCode) {
-        assertNotNull(fragment, "fragment == null");
-        assertNotNull(intent, "intent == null");
+        requireNotNull(fragment, "fragment is null");
+        requireNotNull(intent, "intent is null");
 
         boolean result = false;
         try {
@@ -114,10 +114,10 @@ public final class FragmentUtils
             result = true;
         }
         catch (Exception ex) {
-            LogUtils.e(TAG, ex);
+            Logger.e(TAG, ex);
 
             // Terminate application with runtime exception
-            if (LogUtils.isLoggable(Log.DEBUG)) {
+            if (Logger.isLoggable(LogLevel.Debug)) {
                 throw new RuntimeException(ex);
             }
         }

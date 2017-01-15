@@ -4,15 +4,15 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
 
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 
 import java.util.HashMap;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertTrue;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireTrue;
 
 public final class ClassUtils
 {
@@ -36,7 +36,7 @@ public final class ClassUtils
             }
         }
         catch (ClassNotFoundException ex) {
-            LogUtils.w(TAG, ex);
+            Logger.w(TAG, ex);
         }
         return foundClass;
     }
@@ -53,8 +53,8 @@ public final class ClassUtils
 // MARK: - Private Methods
 
     private static Class<?> loadGeneratedClass(@NonNull Class<?> clazz) throws ClassNotFoundException {
-        assertNotNull(clazz, "clazz == null");
-        assertTrue(Activity.class.isAssignableFrom(clazz) || Fragment.class.isAssignableFrom(clazz),
+        requireNotNull(clazz, "clazz is null");
+        requireTrue(Activity.class.isAssignableFrom(clazz) || Fragment.class.isAssignableFrom(clazz),
                 "Only classes inherited from Activity or Fragment are allowed.");
 
         Class<?> foundClass = sClassMap.get(clazz);

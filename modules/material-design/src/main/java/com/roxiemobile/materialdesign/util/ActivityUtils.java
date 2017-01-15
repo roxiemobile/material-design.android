@@ -7,14 +7,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.roxiemobile.androidcommons.util.LogUtils;
+import com.roxiemobile.androidcommons.logging.Logger;
+import com.roxiemobile.androidcommons.logging.Logger.LogLevel;
 
-import static com.roxiemobile.androidcommons.util.AssertUtils.assertNotNull;
+import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 public final class ActivityUtils
 {
@@ -27,7 +27,7 @@ public final class ActivityUtils
 // MARK: - Methods
 
     public static boolean lockActivityOrientation(@NonNull Activity activity) {
-        assertNotNull(activity, "activity == null");
+        requireNotNull(activity, "activity is null");
 
         // Get default device orientation
         int orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
@@ -42,7 +42,7 @@ public final class ActivityUtils
     }
 
     public static boolean unlockActivityOrientation(@NonNull Activity activity) {
-        assertNotNull(activity, "activity == null");
+        requireNotNull(activity, "activity is null");
 
         // Force UNLOCK activity orientation
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
@@ -56,7 +56,7 @@ public final class ActivityUtils
      * @link http://www.androiddesignpatterns.com/2012/06/compatability-manager-utility-class.html
      */
     public static boolean isTablet(@NonNull Context context) {
-        assertNotNull(context, "context == null");
+        requireNotNull(context, "context is null");
 
         int screenSize = (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK);
         return screenSize >= Configuration.SCREENLAYOUT_SIZE_LARGE;
@@ -74,7 +74,7 @@ public final class ActivityUtils
      * @link http://stackoverflow.com/a/2342856
      */
     public static void hideSoftKeyboard(@NonNull Activity activity, boolean clearFocus) {
-        assertNotNull(activity, "activity == null");
+        requireNotNull(activity, "activity is null");
 
         View view = activity.getCurrentFocus();
         if (view != null) {
@@ -96,8 +96,8 @@ public final class ActivityUtils
      * Launch a new activity.
      */
     public static boolean startActivity(@NonNull Context context, @NonNull Intent intent) {
-        assertNotNull(context, "context == null");
-        assertNotNull(intent, "intent == null");
+        requireNotNull(context, "context is null");
+        requireNotNull(intent, "intent is null");
 
         boolean result = true;
         try {
@@ -106,12 +106,12 @@ public final class ActivityUtils
         }
         catch (ActivityNotFoundException | IllegalStateException | NullPointerException e)
         {
-            if (LogUtils.isLoggable(Log.DEBUG)) {
+            if (Logger.isLoggable(LogLevel.Debug)) {
                 throw e;
             }
 
             // Handle exceptions in release builds
-            LogUtils.e(TAG, e.getMessage());
+            Logger.e(TAG, e.getMessage());
             result = false;
         }
 
@@ -120,8 +120,8 @@ public final class ActivityUtils
     }
 
     public static boolean startActivityForResult(@NonNull Activity activity, @NonNull Intent intent, int requestCode) {
-        assertNotNull(activity, "activity == null");
-        assertNotNull(intent, "intent == null");
+        requireNotNull(activity, "activity is null");
+        requireNotNull(intent, "intent is null");
 
         boolean result = true;
         try {
@@ -130,12 +130,12 @@ public final class ActivityUtils
         }
         catch (ActivityNotFoundException | IllegalStateException | NullPointerException e)
         {
-            if (LogUtils.isLoggable(Log.DEBUG)) {
+            if (Logger.isLoggable(LogLevel.Debug)) {
                 throw e;
             }
 
             // Handle exceptions in release builds
-            LogUtils.e(TAG, e.getMessage());
+            Logger.e(TAG, e.getMessage());
             result = false;
         }
 

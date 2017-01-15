@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.4.0'
 
@@ -24,13 +24,13 @@ allprojects {
 // @link http://tools.android.com/tech-docs/new-build-system/tips
 ext {
     compileSdkVersion = 25
-    buildToolsVersion = '25.0.1'
+    buildToolsVersion = '25.0.2'
     minSdkVersion = 14
     targetSdkVersion = 25
 
     // Shared Dependencies
-    ANDROID_ANNOTATIONS_VERSION = '4.1.0'
-    ANDROID_SUPPORT_VERSION = '25.0.1'
+    ANDROID_ANNOTATIONS_VERSION = '4.2.0'
+    ANDROID_SUPPORT_VERSION = '25.1.0'
 }
 
 task clean(type: Delete) {
