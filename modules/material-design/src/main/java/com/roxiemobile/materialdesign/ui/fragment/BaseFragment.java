@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
+import com.roxiemobile.androidcommons.util.BundleUtils;
 import com.roxiemobile.materialdesign.ui.activity.base.BaseFragmentActivity;
-import com.roxiemobile.materialdesign.util.BundleUtils;
 import com.roxiemobile.materialdesign.util.FragmentUtils;
 
 import org.androidannotations.annotations.AfterViews;

@@ -13,13 +13,13 @@ import android.view.View;
 import android.view.ViewStub;
 
 import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
+import com.roxiemobile.androidcommons.util.BundleUtils;
+import com.roxiemobile.androidcommons.util.IntentUtils;
 import com.roxiemobile.androidcommons.util.StringUtils;
 import com.roxiemobile.materialdesign.R;
 import com.roxiemobile.materialdesign.data.Resources.ResId;
 import com.roxiemobile.materialdesign.ui.routing.base.IntentBuilder;
 import com.roxiemobile.materialdesign.util.ActivityUtils;
-import com.roxiemobile.materialdesign.util.BundleUtils;
-import com.roxiemobile.materialdesign.util.IntentUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
