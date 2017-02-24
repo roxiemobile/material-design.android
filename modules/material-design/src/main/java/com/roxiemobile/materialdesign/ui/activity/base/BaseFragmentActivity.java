@@ -136,8 +136,8 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
             Bundle bundle = BundleUtils.get(extras, IntentBuilder.EXTRA_FRAGMENT);
 
             // Get Fragment's class name
-            String fname  = BundleUtils.get(bundle, IntentBuilder.EXTRA_CLASS_NAME);
-            if (!StringUtils.isNullOrEmpty(fname)) {
+            String fname = BundleUtils.get(bundle, IntentBuilder.EXTRA_CLASS_NAME);
+            if (StringUtils.isNotEmpty(fname)) {
 
                 // Instantiate fragment
                 Fragment fragment = Fragment.instantiate(this, fname, bundle.getBundle(IntentBuilder.EXTRA_ARGUMENTS));
@@ -287,7 +287,8 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
 
 // MARK: - Constants
 
-    private interface PrefKeys {
+    private interface PrefKeys
+    {
         String CONTENT_FRAGMENT_ID = Prefix.PREFS + "CONTENT_FRAGMENT_ID";
         String MOST_RECENT_EXTRAS  = Prefix.PREFS + "MOST_RECENT_EXTRAS";
     }
@@ -299,5 +300,4 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
     private int mContentFragmentId;
 
     private Bundle mMostRecentExtras;
-
 }

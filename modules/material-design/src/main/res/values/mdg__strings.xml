@@ -36,6 +36,7 @@
     <string name="mdg__button_confirm">Confirm</string>
 
     <string name="mdg__button_further">Further</string>
+    <string name="mdg__button_next">Next</string>
 
 <!-- Alerts -->
 <eat-comment />
