@@ -44,5 +44,4 @@ public class CustomViewPager extends ViewPager
 // MARK: - Variables
 
     private boolean mIsPagingEnabled;
-
 }

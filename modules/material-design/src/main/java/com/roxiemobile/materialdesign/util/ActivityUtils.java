@@ -64,7 +64,6 @@ public final class ActivityUtils
 
     public static boolean isPhone(Context context) {
         return (context != null) && (!ActivityUtils.isTablet(context));
-
     }
 
     /**
@@ -146,5 +145,4 @@ public final class ActivityUtils
 // MARK: - Constants
 
     private static final String TAG = ActivityUtils.class.getSimpleName();
-
 }

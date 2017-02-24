@@ -141,5 +141,4 @@ public final class FragmentUtils
 // MARK: - Constants
 
     private static final String TAG = FragmentUtils.class.getSimpleName();
-
 }

@@ -85,5 +85,4 @@ public final class ClassUtils
 
     // Cache of previously looked up generated classes
     private static final HashMap<Class<?>, Class<?>> sClassMap = new HashMap<>();
-
 }

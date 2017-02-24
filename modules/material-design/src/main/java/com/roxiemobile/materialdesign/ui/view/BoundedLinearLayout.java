@@ -72,5 +72,4 @@ public class BoundedLinearLayout extends LinearLayout
     private int mMaxWidth;
 
     private int mMaxHeight;
-
 }

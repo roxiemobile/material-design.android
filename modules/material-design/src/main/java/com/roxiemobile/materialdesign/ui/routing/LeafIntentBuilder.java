@@ -25,5 +25,4 @@ public class LeafIntentBuilder extends IntentBuilder<LeafIntentBuilder>
         intent.setAction(Intent.ACTION_CONFIGURATION_CHANGED);
         return intent;
     }
-
 }

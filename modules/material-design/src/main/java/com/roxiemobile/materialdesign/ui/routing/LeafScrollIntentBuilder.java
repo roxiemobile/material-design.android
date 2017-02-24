@@ -12,5 +12,4 @@ public class LeafScrollIntentBuilder extends LeafIntentBuilder
     protected @IdRes int activityContainerId() {
         return Layout.ROOT_WITH_SCROLL_LAYOUT_ID;
     }
-
 }

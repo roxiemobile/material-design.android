@@ -383,7 +383,6 @@ public class MaskedEditText extends EditText
     private TextMask mTextMask;
     private Pattern mPattern;
 
-    // FIXME: delete!
+    // FIXME: Delete!
     // private EditText mMaskedTextView;
-
 }

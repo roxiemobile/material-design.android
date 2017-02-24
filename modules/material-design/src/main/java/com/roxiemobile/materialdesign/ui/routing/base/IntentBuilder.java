@@ -123,5 +123,4 @@ public abstract class IntentBuilder<BuilderType extends IntentBuilder>
 
     private Class<?> mFragmentClass;
     private Bundle mFragmentArgs;
-
 }

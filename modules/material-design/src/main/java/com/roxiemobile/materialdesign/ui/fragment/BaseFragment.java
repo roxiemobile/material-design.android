@@ -180,5 +180,4 @@ public abstract class BaseFragment extends Fragment
     private Bundle mInstanceState;
 
     private String mUniqueTag;
-
 }

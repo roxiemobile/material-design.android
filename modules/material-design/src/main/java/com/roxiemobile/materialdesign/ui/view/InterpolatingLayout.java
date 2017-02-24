@@ -318,5 +318,4 @@ public class InterpolatingLayout extends ViewGroup {
             offset = mOutRect.right + rightMargin;
         }
     }
-
 }

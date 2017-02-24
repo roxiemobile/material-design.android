@@ -16,5 +16,4 @@ public class RootIntentBuilder extends LeafIntentBuilder
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return intent;
     }
-
 }

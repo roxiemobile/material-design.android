@@ -519,5 +519,4 @@ public class TextMask
     private String mInputMask;
 
     private ArrayList<InputRule> mRules;
-
 }

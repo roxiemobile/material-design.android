@@ -218,5 +218,4 @@ public abstract class BaseDrawerFragmentActivity extends BaseFragmentActivity
 
     private List<DrawerListener> mDrawerListeners = new ArrayList<>();
     private final Object mLock = new Object();
-
 }
