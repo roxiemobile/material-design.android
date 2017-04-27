@@ -54,4 +54,4 @@ dependencies {
 }
 
 // Deploy to Bintray
-apply from: 'push.gradle'
+apply from: 'tools/push.gradle'
