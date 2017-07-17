@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
 apply plugin: 'me.tatarka.retrolambda'
 
 apt {
@@ -34,6 +35,9 @@ android {
 }
 
 dependencies {
+
+    // Kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$KOTLIN_VERSION"
 
     // Android Annotations
     final ANDROID_ANNOTATIONS_VERSION = rootProject.ext.ANDROID_ANNOTATIONS_VERSION
