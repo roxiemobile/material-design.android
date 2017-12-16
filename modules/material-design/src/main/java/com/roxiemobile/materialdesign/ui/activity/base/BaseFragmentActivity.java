@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewStub;
 
 import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
+import com.roxiemobile.androidcommons.diagnostics.Guard;
 import com.roxiemobile.androidcommons.util.BundleUtils;
 import com.roxiemobile.androidcommons.util.IntentUtils;
 import com.roxiemobile.androidcommons.util.StringUtils;
@@ -24,8 +25,6 @@ import com.roxiemobile.materialdesign.util.ActivityUtils;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
-
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @EActivity
 public abstract class BaseFragmentActivity extends AppCompatActivity
@@ -152,7 +151,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
 
     // FIXME: protected
     public final void replaceContentLayout(@NonNull Fragment fragment) {
-        requireNotNull(fragment, "fragment is null");
+        Guard.notNull(fragment, "fragment is null");
 
         // Replace fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.mdg__layout_content, fragment).commit();
@@ -171,7 +170,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity
     }
 
     protected void saveInstanceState(@NonNull Bundle state) {
-        requireNotNull(state, "state is null");
+        Guard.notNull(state, "state is null");
 
         // Save instance state
         state.putInt(PrefKeys.CONTENT_FRAGMENT_ID, mContentFragmentId);

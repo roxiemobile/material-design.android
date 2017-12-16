@@ -6,11 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
+import com.roxiemobile.androidcommons.diagnostics.Guard;
 import com.roxiemobile.androidcommons.logging.Logger;
 import com.roxiemobile.androidcommons.logging.Logger.LogLevel;
-
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireTrue;
 
 public final class FragmentUtils
 {
@@ -32,8 +30,8 @@ public final class FragmentUtils
      * @return Returns a new fragment instance.
      */
     public static Fragment instantiate(@NonNull Class<?> clazz, Bundle args) {
-        requireNotNull(clazz, "clazz is null");
-        requireTrue(Fragment.class.isAssignableFrom(clazz), "clazz is not assignable from Fragment");
+        Guard.notNull(clazz, "clazz is null");
+        Guard.isTrue(Fragment.class.isAssignableFrom(clazz), "clazz is not assignable from Fragment");
 
         Fragment fragment = null;
         try {
@@ -67,7 +65,7 @@ public final class FragmentUtils
      * TODO
      */
     public static Bundle getArguments(@NonNull Fragment fragment, Bundle defaultValue) {
-        requireNotNull(fragment, "fragment is null");
+        Guard.notNull(fragment, "fragment is null");
 
         Bundle extras = fragment.getArguments();
         return (extras != null) ? extras : defaultValue;
@@ -78,8 +76,8 @@ public final class FragmentUtils
      * containing Activity.
      */
     public static boolean startActivity(@NonNull Fragment fragment, @NonNull Intent intent) {
-        requireNotNull(fragment, "fragment is null");
-        requireNotNull(intent, "intent is null");
+        Guard.notNull(fragment, "fragment is null");
+        Guard.notNull(intent, "intent is null");
 
         boolean result = false;
         try {
@@ -104,8 +102,8 @@ public final class FragmentUtils
      * TODO
      */
     public static boolean startActivityForResult(@NonNull Fragment fragment, @NonNull Intent intent, int requestCode) {
-        requireNotNull(fragment, "fragment is null");
-        requireNotNull(intent, "intent is null");
+        Guard.notNull(fragment, "fragment is null");
+        Guard.notNull(intent, "intent is null");
 
         boolean result = false;
         try {

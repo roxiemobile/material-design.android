@@ -11,10 +11,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.roxiemobile.androidcommons.diagnostics.Guard;
 import com.roxiemobile.androidcommons.logging.Logger;
 import com.roxiemobile.androidcommons.logging.Logger.LogLevel;
-
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 public final class ActivityUtils
 {
@@ -27,7 +26,7 @@ public final class ActivityUtils
 // MARK: - Methods
 
     public static boolean lockActivityOrientation(@NonNull Activity activity) {
-        requireNotNull(activity, "activity is null");
+        Guard.notNull(activity, "activity is null");
 
         // Get default device orientation
         int orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
@@ -42,7 +41,7 @@ public final class ActivityUtils
     }
 
     public static boolean unlockActivityOrientation(@NonNull Activity activity) {
-        requireNotNull(activity, "activity is null");
+        Guard.notNull(activity, "activity is null");
 
         // Force UNLOCK activity orientation
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
@@ -56,7 +55,7 @@ public final class ActivityUtils
      * @link http://www.androiddesignpatterns.com/2012/06/compatability-manager-utility-class.html
      */
     public static boolean isTablet(@NonNull Context context) {
-        requireNotNull(context, "context is null");
+        Guard.notNull(context, "context is null");
 
         int screenSize = (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK);
         return screenSize >= Configuration.SCREENLAYOUT_SIZE_LARGE;
@@ -73,7 +72,7 @@ public final class ActivityUtils
      * @link http://stackoverflow.com/a/2342856
      */
     public static void hideSoftKeyboard(@NonNull Activity activity, boolean clearFocus) {
-        requireNotNull(activity, "activity is null");
+        Guard.notNull(activity, "activity is null");
 
         View view = activity.getCurrentFocus();
         if (view != null) {
@@ -95,8 +94,8 @@ public final class ActivityUtils
      * Launch a new activity.
      */
     public static boolean startActivity(@NonNull Context context, @NonNull Intent intent) {
-        requireNotNull(context, "context is null");
-        requireNotNull(intent, "intent is null");
+        Guard.notNull(context, "context is null");
+        Guard.notNull(intent, "intent is null");
 
         boolean result = true;
         try {
@@ -119,8 +118,8 @@ public final class ActivityUtils
     }
 
     public static boolean startActivityForResult(@NonNull Activity activity, @NonNull Intent intent, int requestCode) {
-        requireNotNull(activity, "activity is null");
-        requireNotNull(intent, "intent is null");
+        Guard.notNull(activity, "activity is null");
+        Guard.notNull(intent, "intent is null");
 
         boolean result = true;
         try {

@@ -11,14 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
+import com.roxiemobile.androidcommons.diagnostics.Guard;
 import com.roxiemobile.androidcommons.util.BundleUtils;
 import com.roxiemobile.materialdesign.ui.activity.base.BaseFragmentActivity;
 import com.roxiemobile.materialdesign.util.FragmentUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
-
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @EFragment
 public abstract class BaseFragment extends Fragment
@@ -113,7 +112,7 @@ public abstract class BaseFragment extends Fragment
     }
 
     protected void saveInstanceState(@NonNull Bundle state) {
-        requireNotNull(state, "state is null");
+        Guard.notNull(state, "state is null");
 
         // Save instance state
         state.putString(PrefKeys.UNIQUE_TAG, mUniqueTag);

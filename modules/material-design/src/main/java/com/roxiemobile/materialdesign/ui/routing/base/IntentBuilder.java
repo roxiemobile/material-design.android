@@ -9,10 +9,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
 import com.roxiemobile.androidcommons.data.CommonKeys.Prefix;
+import com.roxiemobile.androidcommons.diagnostics.Guard;
 import com.roxiemobile.materialdesign.data.Resources.ResId;
 import com.roxiemobile.materialdesign.util.ClassUtils;
-
-import static com.roxiemobile.androidcommons.diagnostics.Require.requireNotNull;
 
 @SuppressWarnings({"unchecked", "unused"})
 public abstract class IntentBuilder<BuilderType extends IntentBuilder>
@@ -62,22 +61,22 @@ public abstract class IntentBuilder<BuilderType extends IntentBuilder>
 // --
 
     public @NonNull Intent build(@NonNull Context context) {
-        requireNotNull(context, "context is null");
-        requireNotNull(mActivityClass, "activityClass is null");
-        requireNotNull(mFragmentClass, "fragmentClass is null");
+        Guard.notNull(context, "context is null");
+        Guard.notNull(mActivityClass, "activityClass is null");
+        Guard.notNull(mFragmentClass, "fragmentClass is null");
         return newIntent(context);
     }
 
 // MARK: - Private Methods
 
     private @NonNull Intent newIntent(@NonNull Context context) {
-        requireNotNull(context, "context is null");
+        Guard.notNull(context, "context is null");
 
         Class<?> activityClass = ClassUtils.getGeneratedClass(mActivityClass);
-        requireNotNull(activityClass, "Class generated from " + mActivityClass.getCanonicalName() + " was not found.");
+        Guard.notNull(activityClass, "Class generated from " + mActivityClass.getCanonicalName() + " was not found.");
 
         Class<?> fragmentClass = ClassUtils.getGeneratedClass(mFragmentClass);
-        requireNotNull(fragmentClass, "Class generated from " + mFragmentClass.getCanonicalName() + " was not found.");
+        Guard.notNull(fragmentClass, "Class generated from " + mFragmentClass.getCanonicalName() + " was not found.");
 
         // Build Intent
         Intent intent = new Intent(context, activityClass);
