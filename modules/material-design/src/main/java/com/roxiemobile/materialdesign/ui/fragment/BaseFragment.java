@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 import android.view.View;
@@ -101,7 +100,7 @@ public abstract class BaseFragment extends Fragment
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         // Save instance state
@@ -154,7 +153,7 @@ public abstract class BaseFragment extends Fragment
             return;
         }
 
-        final View actionView = MenuItemCompat.getActionView(menuItem);
+        final View actionView = menuItem.getActionView();
         if (actionView != null) {
 
             final Fragment fragment = this;
