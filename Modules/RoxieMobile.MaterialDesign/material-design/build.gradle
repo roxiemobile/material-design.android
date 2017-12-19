@@ -1,6 +1,13 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'me.tatarka.retrolambda'
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -11,12 +18,6 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 12
         versionName '0.8.0'
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = ['resourcePackageName': 'com.roxiemobile.materialdesign']
-            }
-        }
     }
 
     compileOptions {
@@ -39,24 +40,24 @@ android {
 dependencies {
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$KOTLIN_VERSION"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$KOTLIN_VERSION"
 
     // Android Annotations
     final ANDROID_ANNOTATIONS_VERSION = rootProject.ext.ANDROID_ANNOTATIONS_VERSION
-    kapt "org.androidannotations:androidannotations:$ANDROID_ANNOTATIONS_VERSION"
-    implementation "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
+    apt "org.androidannotations:androidannotations:$ANDROID_ANNOTATIONS_VERSION"
+    compile "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
 
     // Android Support
     final ANDROID_SUPPORT_VERSION = rootProject.ext.ANDROID_SUPPORT_VERSION
-    implementation "com.android.support:design:$ANDROID_SUPPORT_VERSION"
+    compile "com.android.support:design:$ANDROID_SUPPORT_VERSION"
 
     // Android Commons (Roxie Mobile)
     final RXM_ANDROID_COMMONS_VERSION = rootProject.ext.RXM_ANDROID_COMMONS_VERSION
-    implementation "com.roxiemobile.android:android-commons:$RXM_ANDROID_COMMONS_VERSION"
+    compile "com.roxiemobile.android:android-commons:$RXM_ANDROID_COMMONS_VERSION"
 
     // JUnit
     final JUNIT_VERSION = rootProject.ext.JUNIT_VERSION
-    testImplementation "junit:junit:$JUNIT_VERSION"
+    testCompile "junit:junit:$JUNIT_VERSION"
 }
 
 // Deploy to Bintray
