@@ -204,7 +204,7 @@ public abstract class BaseDrawerFragmentActivity extends BaseFragmentActivity
 
         private List<DrawerListener> getListeners() {
             synchronized (mLock) {
-                return Collections.unmodifiableList(mDrawerListeners);
+                return Collections.unmodifiableList(new ArrayList<>(mDrawerListeners));
             }
         }
     };
