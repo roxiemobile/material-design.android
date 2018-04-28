@@ -20,5 +20,4 @@ public class RootDrawerScrollFragmentActivity extends RootDrawerFragmentActivity
         Intent intent = new RootScrollIntentBuilder().activity(RootDrawerFragmentActivity.class).fragment(clazz, args).build(context);
         ActivityUtils.startActivity(context, intent);
     }
-
 }

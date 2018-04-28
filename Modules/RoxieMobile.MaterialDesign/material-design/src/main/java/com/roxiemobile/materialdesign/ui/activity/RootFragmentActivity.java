@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.roxiemobile.materialdesign.R2;
 import com.roxiemobile.materialdesign.ui.activity.base.BaseFragmentActivity;
 import com.roxiemobile.materialdesign.ui.routing.LeafIntentBuilder;
 import com.roxiemobile.materialdesign.util.ActivityUtils;
 
 import org.androidannotations.annotations.EActivity;
 
-@EActivity(resName = "mdg__activity_root")
+@EActivity(R2.layout.mdg__activity_root)
 public class RootFragmentActivity extends BaseFragmentActivity
 {
 // MARK: - Construction
@@ -24,5 +25,4 @@ public class RootFragmentActivity extends BaseFragmentActivity
         Intent intent = new LeafIntentBuilder().activity(RootFragmentActivity.class).fragment(clazz, args).build(context);
         ActivityUtils.startActivity(context, intent);
     }
-
 }

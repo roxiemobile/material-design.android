@@ -20,5 +20,4 @@ public class RootScrollFragmentActivity extends RootFragmentActivity
         Intent intent = new LeafScrollIntentBuilder().activity(RootFragmentActivity.class).fragment(clazz, args).build(context);
         ActivityUtils.startActivity(context, intent);
     }
-
 }

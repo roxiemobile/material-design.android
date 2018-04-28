@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Selection;
@@ -19,7 +20,6 @@ import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
-import android.widget.EditText;
 
 import com.roxiemobile.androidcommons.logging.Logger;
 import com.roxiemobile.materialdesign.R;
@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 @Deprecated
-public class MaskedEditText extends EditText
+public class MaskedEditText extends AppCompatEditText
 {
 // MARK: - Construction
 

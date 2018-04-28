@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.roxiemobile.materialdesign.R2;
 import com.roxiemobile.materialdesign.ui.activity.base.BaseDrawerFragmentActivity;
 import com.roxiemobile.materialdesign.ui.routing.RootIntentBuilder;
 import com.roxiemobile.materialdesign.util.ActivityUtils;
 
 import org.androidannotations.annotations.EActivity;
 
-@EActivity(resName = "mdg__activity_root_with_drawer")
+@EActivity(R2.layout.mdg__activity_root_with_drawer)
 public class RootDrawerFragmentActivity extends BaseDrawerFragmentActivity
 {
 // MARK: - Construction
@@ -24,5 +25,4 @@ public class RootDrawerFragmentActivity extends BaseDrawerFragmentActivity
         Intent intent = new RootIntentBuilder().activity(RootDrawerFragmentActivity.class).fragment(clazz, args).build(context);
         ActivityUtils.startActivity(context, intent);
     }
-
 }
