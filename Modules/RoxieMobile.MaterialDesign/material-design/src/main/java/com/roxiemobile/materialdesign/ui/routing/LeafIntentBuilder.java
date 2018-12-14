@@ -2,7 +2,7 @@ package com.roxiemobile.materialdesign.ui.routing;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.IdRes;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 
 import com.roxiemobile.materialdesign.data.Resources.Layout;
@@ -13,7 +13,7 @@ public class LeafIntentBuilder extends IntentBuilder<LeafIntentBuilder>
 // MARK: - Methods
 
     @Override
-    protected @IdRes int activityContainerId() {
+    protected @LayoutRes int activityContainerId() {
         return Layout.ROOT_LAYOUT_ID;
     }
 
