@@ -1,0 +1,25 @@
+ext {
+    mPackageName = 'Material Design Library'
+    mPackageDesc = 'An Android library to bring Material Design UI to pre-Lolipop Android.'
+
+    mGroupId     = 'com.roxiemobile.android'
+    mArtifactId  = 'material-design'
+    mVersionName = android.defaultConfig.versionName
+    mPackageType = 'aar'
+
+    mCompanyUrl  = 'https://www.roxiemobile.com'
+    mWebsiteUrl  = 'https://github.com/roxiemobile/material-design.android'
+    mIssuesUrl   = 'https://github.com/roxiemobile/material-design.android/issues'
+    mGitRepoUrl  = 'scm:git:https://github.com/roxiemobile/material-design.android.git'
+
+    mAuthorId    = 'roxiemobile'
+    mAuthorName  = 'Aleksandr Bragin'
+    mAuthorEmail = 'bragin-av@roxiemobile.com'
+
+    mLicenseName = 'The Apache Software License, Version 2.0'
+    mLicenseUrl  = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+    mAllLicenses = ['Apache-2.0']
+}
+
+// Publish to JitPack.io
+apply from: 'tools/jitpack.gradle'
