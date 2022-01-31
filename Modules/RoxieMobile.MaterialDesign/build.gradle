@@ -3,31 +3,25 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
-
-        // ButterKnife
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.android.tools.build:gradle:3.6.4'
 
         // Kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
 
         // ButterKnife
-        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
-
-        // Deploy to Bintray
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0'
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -47,7 +41,7 @@ ext {
     ANDROID_ANNOTATIONS_VERSION = '4.6.0'
     ANDROID_SUPPORT_VERSION = '28.0.0'
     JUNIT_VERSION = '4.12'
-    ROXIE_ANDROID_COMMONS_VERSION = '0.9.1'
+    ROXIE_ANDROID_COMMONS_VERSION = '0.9.2'
 }
 
 task clean(type: Delete) {

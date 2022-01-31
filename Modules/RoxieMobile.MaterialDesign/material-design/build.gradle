@@ -54,12 +54,12 @@ dependencies {
 
     // Android Commons (Roxie Mobile)
     final ROXIE_ANDROID_COMMONS_VERSION = rootProject.ext.ROXIE_ANDROID_COMMONS_VERSION
-    api "com.roxiemobile.android:android-commons:$ROXIE_ANDROID_COMMONS_VERSION"
+    api "com.github.roxiemobile:android-commons.android:$ROXIE_ANDROID_COMMONS_VERSION"
 
     // JUnit
     final JUNIT_VERSION = rootProject.ext.JUNIT_VERSION
     testImplementation "junit:junit:$JUNIT_VERSION"
 }
 
-// Deploy to Bintray
-apply from: 'tools/push.gradle'
+// Publish an AAR library to a Maven repository
+apply from: 'tools/publish.gradle'
